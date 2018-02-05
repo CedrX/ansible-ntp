@@ -1,7 +1,7 @@
 ---
 - name: enable ntpd
-  service:  name={{ sshd_service_name }} enabled=yes
+  service:  name={{ ntpd_service_name }} enabled=yes
 
 - name: restart ntpd
-  service:  name={{ sshd_service_name }} state=restarted
+  service:  name={{ ntpd_service_name }} state=restarted
 
