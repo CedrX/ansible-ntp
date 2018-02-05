@@ -1,0 +1,5 @@
+ntp_timezone: Europe/Paris
+
+ntpservers:
+  - ntp1.chu-nancy.fr
+  - ntp2.chu-nancy.fr
