@@ -17,6 +17,7 @@
   with_items:
       - ntp
       - ntpdate
+  tags: install_package
 
 - name: Importation du fichier de configuration du serveur de temps (NTP)
   template: src=ntp.conf.j2 dest=/etc/ntp.conf backup=yes
