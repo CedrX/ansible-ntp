@@ -1,4 +1,7 @@
 ---
+- name: run ntpdate
+  command: "{{ binary_ntpdate_location }} {{ ntpservers[0] }}"
+
 - name: enable ntpd
   service:  name={{ ntpd_service_name }} enabled=yes
 
