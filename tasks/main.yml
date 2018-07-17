@@ -17,7 +17,17 @@
   with_items:
       - ntp
       - ntpdate
+  notify: run ntpdate
   tags: install_package
+
+- name: Stop service ntp if running
+  service:
+    name: "{{ ntp_service_name }}"
+    state: stopped
+
+- name: run ntpdate on hosts
+  command: "echo 1 >/dev/null"
+  notify: run ntpdate 
 
 - name: Importation du fichier de configuration du serveur de temps (NTP)
   template: src=ntp.conf.j2 dest=/etc/ntp.conf backup=yes
