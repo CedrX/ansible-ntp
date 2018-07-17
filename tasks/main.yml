@@ -22,7 +22,7 @@
 
 - name: Stop service ntp if running
   service:
-    name: "{{ ntp_service_name }}"
+    name: "{{ ntpd_service_name }}"
     state: stopped
 
 - name: run ntpdate on hosts
