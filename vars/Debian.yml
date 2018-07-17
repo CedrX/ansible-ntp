@@ -1,1 +1,2 @@
 ntpd_service_name: ntp
+binary_ntpdate_location: "/usr/sbin/ntpdate"
