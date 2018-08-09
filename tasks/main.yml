@@ -27,7 +27,7 @@
 
 - name: run ntpdate on hosts
   command: "echo 1 >/dev/null"
-  notify: run ntpdate 
+  notify: run ntpdate
 
 - name: Importation du fichier de configuration du serveur de temps (NTP)
   template: src=ntp.conf.j2 dest=/etc/ntp.conf backup=yes
@@ -35,6 +35,12 @@
      - enable ntpd
      - restart ntpd
   register: conffile
+
+- debug:
+    msg: "ntp.conf is not changed ({{ conffile.changed }}) --> will call restart ntp task"
+  when: (conffile.changed == false)
+
+- meta: flush_handlers
 
 - name: Restart ntp if config file not changed
   service:  name={{ ntpd_service_name }} state=restarted
