@@ -38,4 +38,4 @@
 
 - name: Restart ntp if config file not changed
   service:  name={{ ntpd_service_name }} state=restarted
-  when: conffile.changed
+  when: not conffile.changed
