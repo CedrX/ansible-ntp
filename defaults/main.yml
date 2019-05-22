@@ -1,5 +1,5 @@
 ntp_timezone: Europe/Paris
 
 ntpservers:
-  - ntp1.chu-nancy.fr
-  - ntp2.chu-nancy.fr
+  - ntp1.contoso.com
+  - ntp2.contoso.com
